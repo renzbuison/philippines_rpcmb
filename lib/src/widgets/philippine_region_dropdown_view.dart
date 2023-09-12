@@ -38,40 +38,40 @@ class _PhilippineDropdownView<T> extends StatelessWidget {
   }
 }
 
-class PhilippineRegionDropdownView extends StatelessWidget {
-  const PhilippineRegionDropdownView({
-    Key? key,
-    this.regions = philippineRegions,
-    required this.onChanged,
-    this.value,
-    this.itemBuilder,
-  }) : super(key: key);
-  final List<Region> regions;
-  final ValueChanged<Region?> onChanged;
-  final Region? value;
-  final DropdownItemBuilder<Region>? itemBuilder;
+// class PhilippineRegionDropdownView extends StatelessWidget {
+//   const PhilippineRegionDropdownView({
+//     Key? key,
+//     this.regions = philippineRegions,
+//     required this.onChanged,
+//     this.value,
+//     this.itemBuilder,
+//   }) : super(key: key);
+//   final List<Region> regions;
+//   final ValueChanged<Region?> onChanged;
+//   final Region? value;
+//   final DropdownItemBuilder<Region>? itemBuilder;
 
-  @override
-  Widget build(BuildContext context) {
-    return _PhilippineDropdownView(
-      choices: regions,
-      onChanged: onChanged,
-      value: value,
-      itemBuilder: (BuildContext context, e) {
-        return itemBuilder?.call(context, e) ?? DropdownMenuItem(value: e, child: Text(e.regionName));
-      },
-      hint: const Text('Select Region'),
-      selectedItemBuilder: (BuildContext context, Region value) {
-        return Text(value.regionName, overflow: TextOverflow.ellipsis);
-      },
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return _PhilippineDropdownView(
+//       choices: regions,
+//       onChanged: onChanged,
+//       value: value,
+//       itemBuilder: (BuildContext context, e) {
+//         return itemBuilder?.call(context, e) ?? DropdownMenuItem(value: e, child: Text(e.regionName));
+//       },
+//       hint: const Text('Select Region'),
+//       selectedItemBuilder: (BuildContext context, Region value) {
+//         return Text(value.regionName, overflow: TextOverflow.ellipsis);
+//       },
+//     );
+//   }
+// }
 
 class PhilippineProvinceDropdownView extends StatelessWidget {
   const PhilippineProvinceDropdownView({
     Key? key,
-    required this.provinces,
+    this.provinces = philippineRegions,
     required this.onChanged,
     this.value,
     this.itemBuilder,
